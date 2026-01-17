@@ -1,0 +1,9 @@
+Asynchronous Code
+
+--> 
+It just means that the language has a way to tell the computer/program that at some point in the code, it will have to wait for something else to finish somewhere else. Let's say that something else is called "slow-file'. 
+
+so, during that time, the computer can go and do some other work, while "slow-file" finishes. 
+
+Then the computer program will come back and start doing the thing that was waiting for the slow file. 
+
