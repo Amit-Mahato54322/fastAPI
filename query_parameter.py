@@ -9,3 +9,10 @@ def index(limit:int, published:bool):
     else:
         return {"data": f"{limit} blogs from the database"}
 
+@app.get("/items/{item_id}")
+async def read_item(item_id:str, q:str|None = None, short: bool = False):
+    item = {"item_id":item_id}
+    if q:
+        item.update({"q":q})
+    if not short:
+        item.update()
