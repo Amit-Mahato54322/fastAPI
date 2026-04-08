@@ -17,7 +17,9 @@ text_post = posts = {
 }
 
 @app.get("/posts")
-def get_all_posts():
+def get_all_posts(limit:int=None):
+    if limit:
+        return list(text_post.values[limit])
     return text_post
 
 @app.get("/posts/{id}")
@@ -25,3 +27,4 @@ def get_post(id:int):
     if id not in text_post:
         raise HTTPException(status_code=404, detail="post not found")
     return text_post.get(id)
+
